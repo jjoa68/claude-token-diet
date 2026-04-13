@@ -27,10 +27,10 @@ I burned through a week's quota in 2 days before I figured out what was happenin
 
 | Step | Time | What | You get |
 |------|------|------|---------|
-| 1 | 30s | `/clear` and `/compact` habits | Stop bleeding tokens mid-session |
-| 2 | 5min | Kill unused MCPs, add `.claudeignore` | 30–50% less context per message |
-| 3 | 15min | Split `rules/`, tune Extended Thinking | Longer sessions before hitting limits |
-| 4 | 30–60min | Distributed memory, ReadOnce hook | Sessions that last all week |
+| 1 | 1min | `/clear` and `/compact` habits | Stop bleeding tokens mid-session |
+| 2 | 3min | Kill unused MCPs, add `.claudeignore` | 30–50% less context per message |
+| 3 | 3min | Split `rules/`, tune Extended Thinking | Longer sessions before hitting limits |
+| 4 | 3min | Distributed memory, ReadOnce hook | Sessions that last all week |
 
 Every step explains **why** before asking you to act. Skip anything. Stop anytime.
 
