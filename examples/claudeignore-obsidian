@@ -1,0 +1,48 @@
+# Obsidian vault용 .claudeignore
+# 이 파일을 프로젝트 루트에 .claudeignore로 복사하세요.
+#
+# 사용법:
+#   cp claudeignore-obsidian /path/to/your/vault/.claudeignore
+
+# Obsidian 내부 설정
+.obsidian/
+
+# 스마트 커넥션 등 플러그인 데이터
+.smart-env/
+.smart-connections/
+
+# 휴지통
+.trash/
+
+# 바이너리 / 미디어 파일
+*.pdf
+*.xlsx
+*.xls
+*.pptx
+*.docx
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.mp3
+*.mp4
+*.mov
+*.zip
+*.tar.gz
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 캐시 / 임시 파일
+*.tmp
+*.bak
+*.swp
+
+# 대용량 데이터
+*.csv
+*.sqlite
+*.db

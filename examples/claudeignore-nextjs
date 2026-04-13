@@ -1,0 +1,68 @@
+# Next.js 프로젝트용 .claudeignore
+# 이 파일을 프로젝트 루트에 .claudeignore로 복사하세요.
+#
+# 사용법:
+#   cp claudeignore-nextjs /path/to/your/project/.claudeignore
+
+# 의존성
+node_modules/
+
+# 빌드 결과물
+.next/
+out/
+dist/
+build/
+
+# 락 파일 (읽을 필요 없음)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# 환경변수 (보안)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 캐시
+.cache/
+.eslintcache
+.tsbuildinfo
+*.tsbuildinfo
+
+# 테스트 커버리지
+coverage/
+
+# IDE / 에디터
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+
+# 정적 에셋 (바이너리)
+public/fonts/
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.ico
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.mp4
+*.webm
+
+# Storybook 빌드
+storybook-static/
+
+# Vercel
+.vercel/
