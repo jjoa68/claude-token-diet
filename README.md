@@ -2,91 +2,79 @@
 
 # Claude Token Diet
 
-A step-by-step interactive guide that helps you diagnose and reduce Claude Code token usage. Designed for non-developers too.
+**Your 30th message costs 31x the first one.** Most people don't know why.
 
-<!-- screenshot -->
+Claude Code re-reads the entire conversation every single message. Your MCP tools, rules, and ignored files silently inflate the bill. By the time you notice, the session is gone.
 
-## What It Does
+`/token-diet` finds the waste and walks you through fixing it. **5 minutes. No code required.**
 
-Claude Code re-reads the entire conversation every message. By the 30th message, you're paying 31x the cost of the first.
+## Before / After
 
-`/token-diet` scans your environment, finds the waste, and walks you through fixing it — one item at a time, with full control over what gets changed.
+<p align="center">
+  <img src="assets/before.svg" width="360" alt="Before: Session 100%, Weekly 95%"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/after.svg" width="360" alt="After: Session 40%, Weekly 60%"/>
+</p>
 
-**Nothing runs automatically.** Every change requires your confirmation.
+> Same workflow, same tasks. The only difference: 5 minutes with `/token-diet`.
 
-## Requirements
+## Who needs this
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) v1.0.0 or later (requires `rules/`, `hooks/`, `/context` support)
+- **Non-developers** using Claude Code (PMs, marketers, writers) who hit usage limits and don't know why
+- **Developers** who want to squeeze more out of every session
+- Anyone who's seen "Session limit reached" way too early
 
-## Installation
-
-### 1. Clone this repository
+## Quick Start
 
 ```bash
+# 1. Clone
 git clone https://github.com/jjoa68/claude-token-diet.git
 cd claude-token-diet
-```
 
-### 2. Copy the command file
-
-```bash
-# Create commands directory (if it doesn't exist)
+# 2. Install
 mkdir -p ~/.claude/commands
-
-# Copy the skill
 cp commands/token-diet.md ~/.claude/commands/token-diet.md
-```
 
-### 2. Run it
-
-In any Claude Code session:
-
-```
+# 3. Run (in any Claude Code session)
 /token-diet
 ```
 
-## What It Covers
+**That's it.** The guide does the rest — diagnose, explain, fix, repeat.
+
+## What it does (step by step)
 
 | Step | Time | Impact | What |
 |------|------|--------|------|
-| 1 | 30s | High | `/clear` and `/compact` habits |
-| 2 | 5min | High | MCP cleanup, `.claudeignore`, CLAUDE.md rules |
-| 3 | 15min | Medium-High | `rules/` separation, Extended Thinking, MCP Tool Search |
+| 1 | 30s | High | `/clear` and `/compact` — the habits that save the most |
+| 2 | 5min | High | Kill unused MCP tools, add `.claudeignore`, tighten CLAUDE.md |
+| 3 | 15min | Med-High | Split `rules/`, tune Extended Thinking, MCP Tool Search |
 | 4 | 30-60min | Medium | Distributed memory, prompt habits, ReadOnce hook |
 
-Each step explains **why** before asking you to act. You can skip any item or stop at any point.
+Every item explains **why** before asking you to act. Skip anything. Stop anytime.
 
-## Examples
+## Bonus: `.claudeignore` templates
 
-The `examples/` directory contains `.claudeignore` templates for common project types:
-
-- `claudeignore-obsidian` — Obsidian vaults
-- `claudeignore-nextjs` — Next.js projects
-- `claudeignore-python` — Python projects
-
-Copy the one that matches your project:
+Drop-in templates for common project types:
 
 ```bash
 cp examples/claudeignore-obsidian /path/to/your/vault/.claudeignore
 ```
 
-## ReadOnce Hook (Optional)
+Available: `obsidian` · `nextjs` · `python`
 
-The ReadOnce hook blocks Claude Code from re-reading the same file within 5 minutes. This prevents duplicate content from inflating your context.
+## Bonus: ReadOnce Hook
 
-See [`hooks/SETUP.md`](hooks/SETUP.md) for installation instructions.
+Blocks Claude Code from re-reading the same file within 5 minutes. Prevents duplicate content from eating your context.
 
-## How It Works
+See [`hooks/SETUP.md`](hooks/SETUP.md) for setup.
 
-1. **Measure** — You run `/context` to capture your current token usage
-2. **Diagnose** — The skill scans your environment and grades each area (pass/warning/fail)
-3. **Guide** — Each item explains what it does, why it matters, and what happens if you skip it
-4. **Apply** — You choose what to apply. Before/After numbers show the effect
-5. **Report** — A summary shows everything you did and the estimated savings
+## Requirements
+
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) v1.0.0+ (needs `rules/`, `hooks/`, `/context` support)
 
 ## Contributing
 
-Issues and pull requests are welcome. Please open an issue first to discuss what you'd like to change.
+Issues and PRs welcome. Open an issue first to discuss.
 
 ## License
 

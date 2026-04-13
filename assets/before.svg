@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="190" viewBox="0 0 360 190">
+  <!-- Card background -->
+  <rect width="360" height="190" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- BEFORE badge -->
+  <rect x="14" y="12" width="70" height="24" rx="5" fill="#dc2626"/>
+  <text x="49" y="29" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">BEFORE</text>
+
+  <!-- USAGE -->
+  <text x="14" y="60" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#9ca3af" letter-spacing="1">USAGE</text>
+
+  <!-- Session row -->
+  <text x="14" y="88" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#111827">Session (5hr)</text>
+  <text x="346" y="88" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" fill="#dc2626" text-anchor="end">100%</text>
+
+  <!-- Session bar bg -->
+  <rect x="14" y="96" width="332" height="8" rx="4" fill="#e5e7eb"/>
+  <!-- Session bar fill -->
+  <rect x="14" y="96" width="332" height="8" rx="4" fill="#dc2626"/>
+
+  <!-- Session reset -->
+  <text x="14" y="118" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="11" fill="#3b82f6">Resets in 1h</text>
+
+  <!-- Weekly row -->
+  <text x="14" y="144" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#111827">Weekly (7 day)</text>
+  <text x="346" y="144" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="15" font-weight="700" fill="#dc2626" text-anchor="end">95%</text>
+
+  <!-- Weekly bar bg -->
+  <rect x="14" y="152" width="332" height="8" rx="4" fill="#e5e7eb"/>
+  <!-- Weekly bar fill -->
+  <rect x="14" y="152" width="315" height="8" rx="4" fill="#dc2626"/>
+
+  <!-- Weekly reset -->
+  <text x="14" y="174" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="11" fill="#3b82f6">Resets in 3d</text>
+</svg>
