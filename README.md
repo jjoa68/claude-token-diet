@@ -2,11 +2,11 @@
 
 # Claude Token Diet
 
-**Your 30th message costs 31x the first one.** Most people don't know why.
+**One question = 1% of your session. Gone.** Your weekly quota burned through in 3 days. And you have no idea what's eating your tokens.
 
-Claude Code re-reads the entire conversation every single message. Your MCP tools, rules, and ignored files silently inflate the bill. By the time you notice, the session is gone.
+Claude Code silently re-reads everything — your entire conversation, every MCP tool definition, every rule file — on every single message. The cost compounds fast. By the time you notice, the session is already gone.
 
-`/token-diet` finds the waste and walks you through fixing it. **5 minutes. No code required.**
+`/token-diet` finds exactly what's wasting your tokens and walks you through fixing it. **5 minutes. No code required.**
 
 ## Before / After
 
@@ -20,9 +20,9 @@ Claude Code re-reads the entire conversation every single message. Your MCP tool
 
 ## Who needs this
 
+- Anyone who's seen **"Session limit reached"** way too early
 - **Non-developers** using Claude Code (PMs, marketers, writers) who hit usage limits and don't know why
 - **Developers** who want to squeeze more out of every session
-- Anyone who's seen "Session limit reached" way too early
 
 ## Quick Start
 
@@ -45,16 +45,20 @@ cp commands/token-diet.md ~/.claude/commands/token-diet.md
 
 | Step | Time | Impact | What |
 |------|------|--------|------|
-| 1 | 30s | High | `/clear` and `/compact` — the habits that save the most |
 | 2 | 5min | High | Kill unused MCP tools, add `.claudeignore`, tighten CLAUDE.md |
 | 3 | 15min | Med-High | Split `rules/`, tune Extended Thinking, MCP Tool Search |
 | 4 | 30-60min | Medium | Distributed memory, prompt habits, ReadOnce hook |
+| 1 | 30s | High | `/clear` and `/compact` habits for long-term savings |
+
+Steps 2-4 change your environment — immediate, measurable results. Step 1 builds habits that keep those gains over time.
 
 Every item explains **why** before asking you to act. Skip anything. Stop anytime.
 
 ## Bonus: `.claudeignore` templates
 
-Drop-in templates for common project types:
+Every time Claude Code searches your project, it reads files it doesn't need — images, PDFs, build artifacts, `.obsidian/` configs. Each unnecessary file read costs tokens on every single tool call.
+
+`.claudeignore` is like `.gitignore` for Claude Code. Drop one in your project root and those files are invisible to Claude forever.
 
 ```bash
 cp examples/claudeignore-obsidian /path/to/your/vault/.claudeignore
@@ -62,11 +66,15 @@ cp examples/claudeignore-obsidian /path/to/your/vault/.claudeignore
 
 Available: `obsidian` · `nextjs` · `python`
 
+Don't see your stack? Use any template as a starting point and customize.
+
 ## Bonus: ReadOnce Hook
 
-Blocks Claude Code from re-reading the same file within 5 minutes. Prevents duplicate content from eating your context.
+Claude Code often re-reads the same file 3-4 times in a single session — every re-read dumps the full content into your context again. The ReadOnce hook blocks duplicate reads within 5 minutes, so one read is enough.
 
-See [`hooks/SETUP.md`](hooks/SETUP.md) for setup.
+This is especially useful during edit-verify loops where Claude reads → edits → reads the same file again to confirm.
+
+See [`hooks/SETUP.md`](hooks/SETUP.md) for setup (macOS/Linux/Windows).
 
 ## Requirements
 
