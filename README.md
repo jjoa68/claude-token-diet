@@ -8,7 +8,7 @@ Your 30th message costs 31x the first one. Claude Code silently re-reads everyth
 
 I burned through a week's quota in 2 days before I figured out what was happening.
 
-`/token-diet` finds exactly what's wasting your tokens and walks you through fixing it. **30 minutes. No code required.**
+`/token-diet` finds exactly what's wasting your tokens and walks you through fixing it. **10 minutes. No code required.**
 
 ## Before / After
 
@@ -21,7 +21,7 @@ I burned through a week's quota in 2 days before I figured out what was happenin
 > **Before**: Each message eats 2–3% of your session. Weekly limit gone by Wednesday.
 > **After**: Under 1% per message. Same workflow, 50%+ fewer tokens burned.
 >
-> Same tasks. The only difference: 30 minutes with `/token-diet`.
+> Same tasks. The only difference: 10 minutes with `/token-diet`.
 
 ## What it does
 
