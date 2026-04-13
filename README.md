@@ -6,6 +6,8 @@
 
 Your 30th message costs 31x the first one. Claude Code silently re-reads everything — your entire conversation, every MCP tool definition, every rule file — on every single message. The cost compounds fast. By the time you notice, the session is already gone.
 
+I burned through a week's quota in 2 days before I figured out what was happening.
+
 `/token-diet` finds exactly what's wasting your tokens and walks you through fixing it. **5 minutes. No code required.**
 
 ## Before / After
@@ -16,13 +18,21 @@ Your 30th message costs 31x the first one. Claude Code silently re-reads everyth
   <img src="assets/after.svg" width="360" alt="After: Session 40%, Weekly 60%"/>
 </p>
 
-> Same workflow, same tasks. The only difference: 5 minutes with `/token-diet`.
+> **Before**: Each message eats 2–3% of your session. Weekly limit gone by Wednesday.
+> **After**: Under 1% per message. Same workflow, 50%+ fewer tokens burned.
+>
+> Same tasks. The only difference: 5 minutes with `/token-diet`.
 
-## Who needs this
+## What it does
 
-- Anyone who's seen **"Session limit reached"** way too early
-- **Non-developers** using Claude Code (PMs, marketers, writers) who hit usage limits and don't know why
-- **Developers** who want to squeeze more out of every session
+| Step | Time | What | You get |
+|------|------|------|---------|
+| 1 | 30s | `/clear` and `/compact` habits | Stop bleeding tokens mid-session |
+| 2 | 5min | Kill unused MCPs, add `.claudeignore` | 30–50% less context per message |
+| 3 | 15min | Split `rules/`, tune Extended Thinking | Longer sessions before hitting limits |
+| 4 | 30–60min | Distributed memory, ReadOnce hook | Sessions that last all week |
+
+Every step explains **why** before asking you to act. Skip anything. Stop anytime.
 
 ## Quick Start
 
@@ -41,40 +51,41 @@ cp commands/token-diet.md ~/.claude/commands/token-diet.md
 
 **That's it.** The guide does the rest — diagnose, explain, fix, repeat.
 
-## What it does (step by step)
+### Safe to try
 
-| Step | Time | Impact | What |
-|------|------|--------|------|
-| 1 | 30s | High | `/clear` and `/compact` — the habits that save the most |
-| 2 | 5min | High | Kill unused MCP tools, add `.claudeignore`, tighten CLAUDE.md |
-| 3 | 15min | Med-High | Split `rules/`, tune Extended Thinking, MCP Tool Search |
-| 4 | 30-60min | Medium | Distributed memory, prompt habits, ReadOnce hook |
+- **Read-only diagnostic.** Nothing changes until you decide.
+- **Undo everything.** Each step tells you how to revert.
+- **No data leaves your machine.** Runs entirely in your local Claude Code session.
 
-Every item explains **why** before asking you to act. Skip anything. Stop anytime.
+## Included: `.claudeignore` templates
 
-## Bonus: `.claudeignore` templates
+Claude reads every file it finds — images, PDFs, lockfiles, `.obsidian/` configs. Each unnecessary read costs tokens on every single tool call.
 
-Every time Claude Code searches your project, it reads files it doesn't need — images, PDFs, build artifacts, `.obsidian/` configs. Each unnecessary file read costs tokens on every single tool call.
-
-`.claudeignore` is like `.gitignore` for Claude Code. Drop one in your project root and those files are invisible to Claude forever.
+Drop a `.claudeignore` in your project root and those files become invisible to Claude. Think `.gitignore`, but for token savings.
 
 ```bash
 cp examples/claudeignore-obsidian /path/to/your/vault/.claudeignore
 ```
 
-Available: `obsidian` · `nextjs` · `python`
+Templates: `obsidian` · `nextjs` · `python` — or use any as a starting point.
 
-Don't see your stack? Use any template as a starting point and customize.
+> **Note:** `.claudeignore` only stops *automatic* reads. When you explicitly ask Claude to work with an ignored file (e.g. "extract text from this PDF"), it can still access it. You're not losing capability — just stopping the silent, repeated reads that waste tokens.
 
-> **Note:** `.claudeignore` only stops Claude from *automatically* reading these files every session. When you explicitly ask Claude to work with an ignored file (e.g. "extract text from this PDF", "convert this image"), it can still access them. You're not losing any capability — just stopping the silent, repeated reads that waste tokens.
+## Included: ReadOnce Hook
 
-## Bonus: ReadOnce Hook
+Claude re-reads the same file 3–4 times in a single session. Every re-read dumps the full content into your context again. ReadOnce blocks duplicate reads within 5 minutes — one read is enough.
 
-Claude Code often re-reads the same file 3-4 times in a single session — every re-read dumps the full content into your context again. The ReadOnce hook blocks duplicate reads within 5 minutes, so one read is enough.
-
-This is especially useful during edit-verify loops where Claude reads → edits → reads the same file again to confirm.
+Especially useful during edit-verify loops where Claude reads → edits → reads the same file again to confirm.
 
 See [`hooks/SETUP.md`](hooks/SETUP.md) for setup (macOS/Linux/Windows).
+
+## Who's using this
+
+- PMs who stopped hitting session limits mid-sprint
+- Solo developers running Claude Code 8+ hours a day
+- Non-technical users who didn't know `.claudeignore` existed
+
+Built by a PM who uses Claude Code 8+ hours daily.
 
 ## Requirements
 
