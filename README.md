@@ -23,7 +23,7 @@ Claude Code re-reads the entire conversation every message. By the 30th message,
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/ayoungjo/claude-token-diet.git
+git clone https://github.com/jjoa68/claude-token-diet.git
 cd claude-token-diet
 ```
 
