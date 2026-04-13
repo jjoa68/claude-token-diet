@@ -4,7 +4,7 @@
 
 **One question = 1% of your session. Gone.** Your weekly quota burned through in 3 days. And you have no idea what's eating your tokens.
 
-Your 30th message costs 31x the first one. Claude Code silently re-reads everything — your entire conversation, every MCP tool definition, every rule file — on every single message. The cost compounds fast. By the time you notice, the session is already gone.
+Your 10th message costs 11x the first one. Claude Code silently re-reads everything — your entire conversation, every MCP tool definition, every rule file — on every single message. The cost compounds fast. By the time you notice, the session is already gone.
 
 I burned through a week's quota in 2 days before I figured out what was happening.
 
