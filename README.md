@@ -45,12 +45,10 @@ cp commands/token-diet.md ~/.claude/commands/token-diet.md
 
 | Step | Time | Impact | What |
 |------|------|--------|------|
+| 1 | 30s | High | `/clear` and `/compact` — the habits that save the most |
 | 2 | 5min | High | Kill unused MCP tools, add `.claudeignore`, tighten CLAUDE.md |
 | 3 | 15min | Med-High | Split `rules/`, tune Extended Thinking, MCP Tool Search |
 | 4 | 30-60min | Medium | Distributed memory, prompt habits, ReadOnce hook |
-| 1 | 30s | High | `/clear` and `/compact` habits for long-term savings |
-
-Steps 2-4 change your environment — immediate, measurable results. Step 1 builds habits that keep those gains over time.
 
 Every item explains **why** before asking you to act. Skip anything. Stop anytime.
 
@@ -67,6 +65,8 @@ cp examples/claudeignore-obsidian /path/to/your/vault/.claudeignore
 Available: `obsidian` · `nextjs` · `python`
 
 Don't see your stack? Use any template as a starting point and customize.
+
+> **Note:** `.claudeignore` only stops Claude from *automatically* reading these files every session. When you explicitly ask Claude to work with an ignored file (e.g. "extract text from this PDF", "convert this image"), it can still access them. You're not losing any capability — just stopping the silent, repeated reads that waste tokens.
 
 ## Bonus: ReadOnce Hook
 

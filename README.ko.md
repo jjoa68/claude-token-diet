@@ -45,12 +45,10 @@ cp commands/token-diet.md ~/.claude/commands/token-diet.md
 
 | Step | 소요 시간 | 효과 | 내용 |
 |------|-----------|------|------|
+| 1 | 30초 | 상 | `/clear`, `/compact` — 가장 많이 아끼는 습관 |
 | 2 | 5분 | 상 | 안 쓰는 MCP 도구 정리, `.claudeignore` 생성, CLAUDE.md 강화 |
 | 3 | 15분 | 중~상 | `rules/` 분리, Extended Thinking 조절, MCP Tool Search |
 | 4 | 30~60분 | 중 | 분산 메모리, 프롬프트 습관, ReadOnce 훅 |
-| 1 | 30초 | 상 | `/clear`, `/compact` 습관 — 장기적 절감 효과 |
-
-Step 2~4는 환경을 바꿉니다 — 즉시 측정 가능한 결과. Step 1은 그 효과를 장기적으로 유지하는 습관입니다.
 
 모든 항목은 **왜 해야 하는지** 먼저 설명합니다. 아무 항목이나 건너뛸 수 있고, 언제든 중단 가능합니다.
 
@@ -67,6 +65,8 @@ cp examples/claudeignore-obsidian /path/to/your/vault/.claudeignore
 제공 유형: `obsidian` · `nextjs` · `python`
 
 내 스택이 없다면? 아무 템플릿이나 복사해서 커스터마이즈하면 됩니다.
+
+> **참고:** `.claudeignore`는 Claude가 매 세션마다 *자동으로* 읽는 것만 막습니다. 직접 요청하면(예: "이 PDF에서 텍스트 추출해줘", "이 이미지를 변환해줘") 여전히 접근할 수 있습니다. 기능을 잃는 게 아니라, 조용히 반복되는 불필요한 읽기만 멈추는 겁니다.
 
 ## 부록: ReadOnce 훅
 
